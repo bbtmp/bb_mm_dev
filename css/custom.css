@@ -1,5 +1,4 @@
       body {
-        padding-top: 75px;
       }
 
 /*main-nav*/
@@ -70,6 +69,8 @@
 
             #galleria {
                 height: 320px;
+                margin-top: 75px;
+
             }
 
             .galleria-image {
