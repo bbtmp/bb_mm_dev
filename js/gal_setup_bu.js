@@ -97,9 +97,7 @@ check_mode();
     Galleria.loadTheme('js/galleria.folio.mod.js');
 
 // console.log(active_cur_youtube_id)
-
-    // var playListURL = 'http://gdata.youtube.com/feeds/api/playlists/'+sectionlist[sectionlist_ac_i].youtube_id+'?v=2&alt=json&max-results=50&callback=?';
-    var playListURL = 'http://gdata.youtube.com/feeds/api/user/fotentainment/uploads?v=2&alt=json&max-results=50&callback=?';
+    var playListURL = 'http://gdata.youtube.com/feeds/api/playlists/'+sectionlist[sectionlist_ac_i].youtube_id+'?v=2&alt=json&max-results=50&callback=?';
     var videoURL = 'http://www.youtube.com/watch?v=';
 
     $.getJSON(playListURL, function(data) {

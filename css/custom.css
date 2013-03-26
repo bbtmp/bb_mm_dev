@@ -67,28 +67,28 @@
     
 }
 
-            #galleria {
-                height: 320px;
-                margin-top: 75px;
+#galleria {
+  height: 320px;
+  margin-top: 75px;
 
-            }
+}
 
-            .galleria-image {
+.galleria-image {
 
-            }
-            
-            #cat-title {
-                position: absolute;
-                width:220px;
-                height: 148px;
-                background: green !important;
-                cursor: default !important;
-            }
-            #footer{
-                position: fixed;
-                bottom: 0;
-                left: 0;
-            }
+}
+
+#cat-title {
+  position: absolute;
+  width:220px;
+  height: 148px;
+  background: green !important;
+  cursor: default !important;
+}
+#footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
 
 /*            sass --watch your/scss/directory:your/css/directory
 */
