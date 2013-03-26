@@ -6143,3 +6143,14 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+/*GEORGE-23.03*/
+.float-right{
+  float:right !important;
+}
+.contact-form p, h2{
+ 
+}
+.no-left-right-margin{
+  margin-left:0px !important;
+  margin-right:0px !important;
+}
