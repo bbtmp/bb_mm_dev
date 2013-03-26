@@ -19,19 +19,41 @@ var img_item;
 var a_item;
 var requests = [];
 var aRequest;
-
+var sectionlist=[];
+var categ_mode=false;
+var active_cur_flickr_id='';
+var active_cur_youtube_id='';
+var active_cur_title='';
+var active_cur_parent_title='';
 
 function init_gallery() {
+console.log(SectionList())
 
+function SectionList() {
+    for (var i = 0; i < $('#sections li').length; i++) {
+        var tmp_item=$('#sections li').eq(i);
 
+        if(tmp_item.hasClass('active')){
+         active_cur_flickr_id=tmp_item.attr('data-flickr-id');
+         active_cur_youtube_id=tmp_item.attr('data-youtube-id');
 
+    }
 
-
+        sectionlist.push({
+                "title" : tmp_item.attr('id'),
+                "parent-title" : tmp_item.attr('data-parent-title'),
+                "flickr_id" : tmp_item.attr('data-flickr-id'),
+                "youtube_id" : tmp_item.attr('data-youtube-id')
+            });
+    }
+    return sectionlist;
+}
 
 
     Galleria.loadTheme('js/galleria.folio.mod.js');
 
-    var playListURL = 'http://gdata.youtube.com/feeds/api/playlists/PLxu9Bk7eE0WzHbajh9ySYsT2SZZn93fVP?v=2&alt=json&max-results=50&callback=?';
+// console.log(active_cur_youtube_id)
+    var playListURL = 'http://gdata.youtube.com/feeds/api/playlists/'+active_cur_youtube_id+'?v=2&alt=json&max-results=50&callback=?';
     var videoURL = 'http://www.youtube.com/watch?v=';
 
     $.getJSON(playListURL, function(data) {
@@ -139,7 +161,8 @@ function run_gal() {
         gallery = this;
         gallery.bind("thumbnail", function(e) {
             if (k == 0) {
-                gallery.prependChild('thumbnails', '<div class="galleria-image frodo" id="cat-title"><div class="gal-controls photo-filter">images</div><div class="division">|</div><div class="gal-controls filter vid-filter">videos</div></div>');
+
+                gallery.prependChild('thumbnails', '<div class="galleria-image" id="cat-title"><div class="gal-controls photo-filter">images</div><div class="division">|</div><div class="gal-controls filter vid-filter">videos</div></div>');
 
                 $('.photo-filter').click(function() {
                     k = 0;
