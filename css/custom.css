@@ -1,0 +1,93 @@
+      body {
+        padding-top: 75px;
+      }
+
+/*main-nav*/
+
+.btn-navbar.brand{
+    background: none;
+    float: left;
+}
+
+.nav-collapse.brand{
+    float: left;
+      display: none;
+    background: green;
+}
+.
+.navbar .brand {
+  display: block;
+  float: left;
+  width:275px;
+/*  padding: 10px 20px 10px;
+  margin-left: -20px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #777777;
+  text-shadow: 0 1px 0 #ffffff;*/
+}
+
+.navbar .brand:hover,
+.navbar .brand:focus {
+  text-decoration: none;
+}
+
+.nav-drop-back {
+  background: #eff1f0;
+  height: 265px;
+  left: 0;
+  position: absolute;
+  top: -265px;
+  width: 100%;
+  z-index: 100;
+  margin-left:0 !important;
+}
+
+.nav-bg{
+    background: url(../media/mm_nav_bg.jpg) repeat-x;
+
+}
+.navbar-inner .container-fluid{
+    margin-top: 28px;
+}
+
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  color: #000000;
+  text-decoration: none;
+    
+}
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+  /*color: #555555;*/
+}
+
+.port-one{
+    
+}
+
+            #galleria {
+                height: 320px;
+            }
+
+            .galleria-image {
+
+            }
+            
+            #cat-title {
+                position: absolute;
+                width:220px;
+                height: 148px;
+                background: green !important;
+                cursor: default !important;
+            }
+            #footer{
+                position: fixed;
+                bottom: 0;
+                left: 0;
+            }
+
+/*            sass --watch your/scss/directory:your/css/directory
+*/
