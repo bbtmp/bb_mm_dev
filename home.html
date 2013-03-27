@@ -34,56 +34,56 @@
         <div class="container-fluid">
 
           <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
- 
-<!--           <a href="#" class="nav-collapse brand" data-toggle="collapse" data-target=".nav-collapse"><img src="media/MMlogo.jpg" alt=""><img src="media/MMlogo_2.jpg" alt=""></a>
- -->
+
+          <!--           <a href="#" class="nav-collapse brand" data-toggle="collapse" data-target=".nav-collapse"><img src="media/MMlogo.jpg" alt=""><img src="media/MMlogo_2.jpg" alt=""></a>
+          -->
 
           <a href="#" class="brand" data-toggle="collapse" ><img src="media/MMlogo.jpg" alt=""><img src="media/MMlogo_2.jpg" alt=""></a>
           <div class="nav-collapse inner">
-            <ul class="nav pull-right">
+            <ul class="nav pull-right" id="main-nav">
 
-              <li class="dropdown active">
-                <a data-toggle="dropdown" class="dropdown-submenu" href="#">PORTFOLIO <b class="caret"></b></a>
+              <li class="dropdown active" data-tag-id="featured">
+                <a data-toggle="dropdown" class="dropdown-submenu"  href="#">PORTFOLIO <b class="caret"></b></a>
                 <ul class="dropdown-menu port-one">
-                      <li>
-                        <a href="#">BACKSTAGE</a>
-                      </li>
-                      <li>
-                        <a href="#">CORPORATE</a>
-                      </li>
-                      <li>
-                        <a href="#">FASHION</a>
-                      </li>
-                      <li>
-                        <a href="#">PORTRAITS</a>
-                      </li>
-                      <li>
-                        <a href="#">STREET</a>
-                      </li>
-                      <li>
-                        <a href="#">WEDDINGS</a>
-                      </li>
+                  <li data-tag-id="backstage">
+                    <a href="#">BACKSTAGE</a>
+                  </li>
+                  <li data-tag-id="business">
+                    <a href="#">CORPORATE</a>
+                  </li>
+                  <li data-tag-id="fashion">
+                    <a href="#">FASHION</a>
+                  </li>
+                  <li data-tag-id="portraits">
+                    <a href="#">PORTRAITS</a>
+                  </li>
+                  <li data-tag-id="street">
+                    <a href="#">STREET</a>
+                  </li>
+                  <li data-tag-id="weddings">
+                    <a href="#">WEDDINGS</a>
+                  </li>
 
-                      <li class="dropdown-submenu">
-                        <a href="#">EXHIBITIONS</a>
-                        <ul class="dropdown-menu">
-                          <li>
-                            <a href="#">third level link</a>
-                          </li>
-                          <li>
-                            <a href="#">third level link</a>
-                          </li>
-                          <li>
-                            <a href="#">third level link</a>
-                          </li>
-                          <li>
-                            <a href="#">third level link</a>
-                          </li>
-                          <li>
-                            <a href="#">third level link</a>
-                          </li>
-                        </ul>
+                  <li data-tag-id="exhibitions" class="dropdown-submenu port-two">
+                    <a href="#">EXHIBITIONS</a>
+                    <ul class="dropdown-menu">
+                      <li data-tag-id="away">
+                        <a href="#">away</a>
                       </li>
+                      <li data-tag-id="cigarette ends">
+                        <a href="#">cigarette ends</a>
+                      </li>
+                      <li data-tag-id="love me">
+                        <a href="#">love me</a>
+                      </li>
+                      <li data-tag-id="prison">
+                        <a href="#">prison</a>
+                      </li>
+                      <li data-tag-id="scenes noir">
+                        <a href="#">scenes noir</a>
+                      </li>
+                    </ul>
+                  </li>
 
                 </ul>
               </li>
@@ -112,23 +112,18 @@
         </div>
       </div>
     </div>
-    <div class="row nav-drop-back">
-    </div>
-
+    <div class="row nav-drop-back"></div>
 
     <div id="galleria" data-mode="home"></div>
 
-
-    <div id="sections" class="frodo"><ul>
-      <li id="featured" class="active"  data-flickr-id="72157633091042919" data-youtube-id="PLxu9Bk7eE0WxLNVSQqk_cIqev6jqJPXxo" data-parent-title="">
-      </li>
-      <li id="business" data-flickr-id="72157633091042919" data-youtube-id="PLxu9Bk7eE0WxLNVSQqk_cIqev6jqJPXxo" data-parent-title="exhibitions">
-      </li>
-      <li id="backstage" data-flickr-id="72157633051512474" data-youtube-id="PLxu9Bk7eE0WzHbajh9ySYsT2SZZn93fVP" data-parent-title="">
-      </li >
-    </ul>
+    <div id="sections" class="frodo">
+      <ul>
+        <li id="featured" class="active"  data-flickr-id="72157633091042919" data-youtube-id="PLxu9Bk7eE0WxLNVSQqk_cIqev6jqJPXxo" data-parent-title=""></li>
+        <li id="business" data-flickr-id="72157633091042919" data-youtube-id="PLxu9Bk7eE0WxLNVSQqk_cIqev6jqJPXxo" data-parent-title="exhibitions"></li>
+        <li id="backstage" data-flickr-id="72157633051512474" data-youtube-id="PLxu9Bk7eE0WzHbajh9ySYsT2SZZn93fVP" data-parent-title=""></li >
+      </ul>
     </div>
-<!--     <div class="container">
+    <!--     <div class="container">
 
     </div> -->
     <!-- /container -->
