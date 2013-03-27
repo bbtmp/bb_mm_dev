@@ -11,6 +11,7 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
+    z-index:1;
 }
 .galleria-stage {
     width:100%;
@@ -24,6 +25,14 @@
         width:220px;
     height: 148px !important;
 }*/
+#cat-title {
+  position: absolute;
+  width:220px;
+  height: 148px;
+  background: green !important;
+  cursor: default !important;
+}
+
 .galleria-thumbnails .galleria-image {
     width:220px;
     height: 148px;
@@ -92,6 +101,7 @@
     line-height:1.2;
     font-size:11px;
     display:none;
+    z-index:3;
 }
 .galleria-plus span {
     position:absolute;
@@ -101,6 +111,19 @@
     background:rgba(0,0,0,.5);
     padding: 1px 5px;
     max-width:160px;
+}
+
+
+
+.play-btn{
+  width: 41px;
+  height: 47px;
+  position: absolute;
+  top: 51px;
+  left: 90px;
+  background: green;
+  z-index:2;
+background:url(../media/sprite_1.png) no-repeat -50px 0;
 }
 
 .galleria-close{

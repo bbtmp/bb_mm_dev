@@ -34,8 +34,18 @@ var active_cur_vids = 0;
 // var active_cur_title='';
 var galleria_item = $('#galleria');
 
-function mk_c_thumb() {
-    var tmp_categ_thumb_ = '<div class="galleria-image" id="cat-title">';
+// function mk_c_thumb() {
+
+// }
+function mk_c_thumb_info(u_state) {
+    var tmp_categ_thumb_='';
+            if(!categ_mode){
+                
+            }
+
+    if(u_state=='initial'){
+    tmp_categ_thumb_ = '<div class="galleria-image" id="cat-title">';
+    }
     tmp_categ_thumb_ += '<h1>' + active_tag + '</h1>';
     if (active_parent.length > 0) {
         tmp_categ_thumb_ += '<span class="gal-parent">' + active_parent + '</span>';
@@ -52,7 +62,11 @@ function mk_c_thumb() {
     if (active_cur_vids > 0) {
         tmp_categ_thumb_ += '<div class="gal-controls vid-filter">videos<span>' + active_cur_vids + '</span></div>';
     }
-    tmp_categ_thumb_ += '</div></div>';
+    tmp_categ_thumb_ += '</div>';
+
+    if(u_state=='initial'){
+        tmp_categ_thumb_ += '</div>';
+    }   
     return tmp_categ_thumb_;
 }
 
@@ -60,7 +74,7 @@ function get_active_tag() {
     active_tag = $('.nav li.active').attr('data-tag-id');
     if($('.dropdown-submenu li.active').length){
         active_parent=$('.port-two').attr('data-tag-id');
-        alert(active_parent);
+        // alert(active_parent);
     }
     // alert(active_tag)
     return active_tag;
@@ -125,7 +139,7 @@ function init_flickr() {
     });
     function jsonFlickrApi(ps_json) {
         // console.log( 'data count:', ps_json.query.results.json.json.length );
-        console.log(ps_json)
+        console.log(ps_json);
         // console.log(ps_json)
         var tmparray = [];
         $.each(ps_json.photos.photo, function(i, photo) {
@@ -156,11 +170,13 @@ function init_flickr() {
 }//endfunc
 
 function init_youtube() {
-    var playListURL = 'http://gdata.youtube.com/feeds/api/users/fotentainment/uploads?q=' + get_active_tag() + '&alt=json&callback=?';
+    var playListURL = 'http://gdata.youtube.com/feeds/api/users/fotentainment/uploads?q=' + get_active_tag() + '&alt=json';
     var videoURL = 'http://www.youtube.com/watch?v=';
 
     $.getJSON(playListURL, function(data) {
-        // console.log(data);
+
+        console.log(playListURL);
+        console.log(data);
         // var cat = data.feed.title.$t;
 
         $.each(data.feed.entry, function(i, item) {
@@ -196,7 +212,6 @@ function checkcomplete() {
     if (ajxchk == 2) {
         allitem = fisherYates(photoitem.concat(videoitem));
         run_gal();
-
     }
 }
 
@@ -218,7 +233,7 @@ function fisherYates(myArray) {
 // $.when.apply($, requests).done(console.log('requests'));
 
 function run_gal() {
-    $('#galleria').append(a_item);
+    // $('#galleria').append(a_item);
 
     // console.log(photoitem);
 
@@ -226,14 +241,32 @@ function run_gal() {
     //     dataSource: photoitem
     // })
     var k = 0;
+    var j;
+    var item_added = false;
+
     Galleria.run('#galleria', {
         dataSource : allitem
     }).ready(function(options) {
+        // gal_state=allitem;
+        // var galtoload=allitem;
         gallery = this;
         gallery.bind("thumbnail", function(e) {
+console.log('kstart'+k)
+                    // if(!item_added){
+                    //     k =-1;
+                    //     item_added=true;
+                    // }
+
+
+            // $(thumbnails).prependChild('thumbnails', mk_c_thumb_info('hover'));
+            // alert($('.thumbnails').html())
+
             if (k == 0) {
                 if (categ_mode) {
-                    gallery.prependChild('thumbnails', mk_c_thumb());
+
+                    gallery.prependChild('thumbnails', mk_c_thumb_info('initial'));
+
+                    // console.log(mk_c_thumb())
                 }
                 switch(gal_state) {
                     case 'photo':
@@ -250,14 +283,21 @@ function run_gal() {
                     k = 0;
                     if ($(this).hasClass('active')) {
                         $(this).removeClass('active');
+                        gal_state='all';
+                            // console.log(allitem)
+                            // console.log("allitem"+allitem.length)
                         gallery.load(allitem);
 
                     } else {
+
                         if ($(this).hasClass('photo-filter')) {
+
                             gal_state = 'photo';
                             gallery.load(photoitem);
                         } else if ($(this).hasClass('vid-filter')) {
+
                             gal_state = 'vid';
+
                             gallery.load(videoitem);
                         }
 
@@ -277,7 +317,20 @@ function run_gal() {
             this.$('thumbnails').children().eq(k).css('height', 148)
 
             k++;
-            console.log(k)
+
+            if(categ_mode){
+                 j=k;
+            }else{
+                 j=k-1;
+            }
+// alert('wha')
+var tmp_thmb=gallery.$('thumbnails').children().eq(j);
+            tmp_thmb.find('.galleria-plus').html(mk_c_thumb_info('overlay'));
+
+            if(tmp_thmb.find('img').attr('src').substring(11,18)=='youtube'){
+                tmp_thmb.append('<div class="play-btn"></div>')
+            }
+
 
         });
         // gallery.$('thumbnails').each(function(){
