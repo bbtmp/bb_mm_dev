@@ -41,7 +41,7 @@
     top:0;
     left:0;
     cursor: pointer; /* opera */
-    cursor: url(../media/cursor-zoom.png), -moz-zoom-in; /* chrome, FF */
+    /*cursor: url(../media/cursor-zoom.png), -moz-zoom-in; /* chrome, FF */*/
     cursor: pointer\9; /* IE */
     background:#000 url(../media/miniloader.gif) no-repeat 50% 50%;
 }
@@ -91,39 +91,62 @@
 }
 
 .galleria-plus {
+    padding: 0 18px;
     position:absolute;
     top:0;
     left:0;
-    height:100%;
-    width:100%;
-    background:url(../media/bg.png);
+    height: 148px;
+    width:184px;
+    background:url(../media/sprite_1.png) 0 -46px no-repeat ;
     color:#fff;
     line-height:1.2;
     font-size:11px;
     display:none;
     z-index:3;
+
+}
+
+/*
+gal-categ
+gal-title
+control-container
+gal-controls
+division
+gal-controls
+*/
+.galleria-plus h1, .galleria-plus h2{
+    font-size: 18px;
+    margin-top: 10px;
+    width:100%;
+    text-align: center;
+    color: #000;
 }
 .galleria-plus span {
+    width:100%;
+    text-align: center;
+color: #000;
+  font-family: 'Ubuntu Condensed', sans-serif;
+  text-transform:uppercase;
+  font-size: 14px;
+/*  
     position:absolute;
     bottom:5px;
     left:5px;
     background:#000;
     background:rgba(0,0,0,.5);
     padding: 1px 5px;
-    max-width:160px;
+    max-width:160px;*/
 }
-
-
 
 .play-btn{
   width: 41px;
-  height: 47px;
+  height: 45px;
   position: absolute;
   top: 51px;
   left: 90px;
   background: green;
   z-index:2;
-background:url(../media/sprite_1.png) no-repeat -50px 0;
+  background:url(../media/sprite_1.png) no-repeat -50px 0;
 }
 
 .galleria-close{

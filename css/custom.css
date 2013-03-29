@@ -1,34 +1,72 @@
 /*      body {
-      }
-*/
+ }
+ */
+
+/*Typography start*/
+
+/*
+ font-family: 'Ubuntu', sans-serif;
+ font-family: 'Ubuntu Condensed', sans-serif;
+ */
+p,a {
+  font-family: 'Ubuntu', sans-serif
+}
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover, a:focus, a.active {
+background-color: #ffd800;
+  text-decoration: none;
+  color: #000;
+
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  text-transform:uppercase;
+}
+h1 {
+}
+h2 {
+}
+h3 {
+}
+p {
+}
+a {
+}
+a:hover {
+}
+
 /*main-nav*/
 
-.btn-navbar.brand{
-    background: none;
-    float: left;
+/*logo*/
+
+.btn-navbar.brand {
+  background: none;
+  float: left;
 }
 
-.nav-collapse.brand{
-    float: left;
-      display: none;
-    background: green;
+.nav-collapse.brand {
+  float: left;
+  display: none;
+  background: green;
 }
-.
+
 .navbar .brand {
   display: block;
   float: left;
-  width:275px;
-/*  padding: 10px 20px 10px;
-  margin-left: -20px;
-  font-size: 20px;
-  font-weight: 200;
-  color: #777777;
-  text-shadow: 0 1px 0 #ffffff;*/
+  width: 275px;
 }
 
-.navbar .brand:hover,
-.navbar .brand:focus {
+.navbar .brand:hover, .navbar .brand:focus {
   text-decoration: none;
+}
+
+.navbar .container-fluid{
+  padding-right: 0;
 }
 
 .nav-drop-back {
@@ -39,46 +77,179 @@
   top: -265px;
   width: 100%;
   z-index: 100;
-  margin-left:0 !important;
+  margin-left: 0 !important;
 }
 
-.nav-bg{
-    background: url(../media/mm_nav_bg.jpg) repeat-x;
-
+.nav-bg {
+  background: url(../media/mm_nav_bg.jpg) repeat-x;
 }
-.navbar-inner .container-fluid{
-    margin-top: 28px;
+.navbar-inner .container-fluid {
+  margin-top: 28px;
 }
 
-.navbar .nav > .active > a,
-.navbar .nav > .active > a:hover,
-.navbar .nav > .active > a:focus {
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
   color: #000000;
   text-decoration: none;
-    
 }
-.navbar .nav li.dropdown.open > .dropdown-toggle,
-.navbar .nav li.dropdown.active > .dropdown-toggle,
-.navbar .nav li.dropdown.open.active > .dropdown-toggle {
+
+.nav li {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.navbar .nav li.dropdown.open > .dropdown-toggle, .navbar .nav li.dropdown.active > .dropdown-toggle, .navbar .nav li.dropdown.open.active > .dropdown-toggle {
   /*color: #555555;*/
 }
 
-.port-one{
-    
+.port-one {
+  top: 45px;
+}
+
+.port-two {
+  background: none repeat scroll 0 0 red !important;
+  position: absolute !important;
+  top: -180px !important;
+  height: 200px !important;
+  left: 158px !important;
+}
+
+.left-logo {
+  float: right;
+  margin-top: -13px;
 }
 
 #galleria {
   height: 320px;
   margin-top: 75px;
-
+  z-index: 1;
 }
 
+/*footer-start*/
 
-#footer{
+#footer {
   position: fixed;
   bottom: 0;
   left: 0;
+  background-color: #f5f5f5;
+  z-index: 3;
+  height: 25px;
+  line-height: 25px;
 }
 
-/*            sass --watch your/scss/directory:your/css/directory
+
+
+@media (max-width: 767px) {
+
+    #galleria {
+      margin-top: 0;
+    }
+
+  /*  #footer span.last {
+      float: right !important
+    }*/
+
+    #footer {
+      height: auto;
+      position: relative;
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+  }
+}
+
+#breadcrumb {
+
+}
+
+#breadcrumb li {
+  display: block;
+  float: left;
+  line-height: 20px;
+  list-style: none outside none;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  /*font-weight: bold;*/
+
+}
+
+.language-switcher-inner{
+  float: right;
+}
+
+.language-switcher-inner a {
+  float: left;
+  height: 20px;
+  line-height: 19px;
+  margin-top: 3px;
+  padding: 0 5px;
+  text-transform: uppercase;
+    margin-left: 5px;  
+}
+
+.social-inner{
+  float: right;
+}
+
+.social-links a {
+  display: block;
+  width: 19px;
+  height: 19px;
+  float: left;
+  margin-right: 7px;
+  margin-top: 3px;
+}
+
+.social-links a.last {
+  margin-right: 0;
+}
+.social-links a:hover {
+  opacity: 0.8;
+}
+
+.social-links a.fb {
+  background: url(../media/sprite_1.png) -91px -0 no-repeat;
+}
+.social-links a.twitter {
+  background: url(../media/sprite_1.png) -91px -19px no-repeat;
+}
+.social-links a.flickr {
+  background: url(../media/sprite_1.png) -110px 0 no-repeat;
+}
+
+.credits-inner{
+  float: right;
+}
+.credits-inner span{
+  margin-right: 6px;
+}
+/*.credits-span {
+  position: relative;
+  margin-left: -2px !important;
+}
 */
+.bb_logo {
+   margin-right: 6px;
+ 
+  margin-top: 5px;
+  float: right;
+  width: 15px;
+  height: 15px;
+  background: url(../media/sprite_1.png) 0 -25px no-repeat;
+  /*background: green;*/
+}
+
+.bb_logo:hover {
+  opacity: 0.5;
+}
+/*news-details*/
+.share {
+  width: 100px;
+  float: left;
+}
+.back-button {
+  float: right;
+}
